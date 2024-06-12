@@ -1,0 +1,46 @@
+spring:
+  application:
+    name:
+      ApiGateway
+  main:
+    web-application-type:
+      reactive
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+  data:
+    redis:
+      database: 0
+      host: localhost
+      port: 16379
+      password: mypass
+      timeout: 60000
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG
+      example:
+        apigateway:
+          ConfigGateway: DEBUG
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+###
+
+
+
+
+
+

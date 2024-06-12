@@ -1,0 +1,42 @@
+spring:
+  application:
+    name:
+      Employee
+  datasource:
+    url:
+      jdbc:mysql://localhost:3306/employee
+    username:
+      root
+    password:
+      a121314A
+    driver-class-name:
+      com.mysql.cj.jdbc.Driver
+    h2:
+      console:
+        enabled:
+          true
+  jpa:
+    defer-datasource-initialization:
+      true
+    properties:
+      hibernate:
+        dialect:
+          org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto:
+        update
+    show-sql:
+      true
+  main:
+    allow-circular-references:
+      true
+  servlet:
+    multipart:
+      enabled:
+        true
+
+server:
+  port:
+    8085
+
+#spring.main.allow-bean-definition-overriding=true

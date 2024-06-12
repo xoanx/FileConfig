@@ -1,0 +1,35 @@
+spring:
+  application:
+    name:
+      Salary
+
+  datasource:
+    url:
+      jdbc:mysql://localhost:3306/salary
+    username:
+      root
+    password:
+      a121314A
+    driver-class-name:
+      com.mysql.cj.jdbc.Driver
+  h2:
+    console:
+      enabled:
+        true
+  jpa:
+    defer-datasource-initialization:
+      true
+    properties:
+      hibernate:
+        dialect:
+          org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto:
+        update
+    show-sql:
+      true
+  main:
+    allow-circular-references:
+      true
+server:
+  port: 8083
