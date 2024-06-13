@@ -40,6 +40,13 @@ spring:
                 replenishRate: 10
                 burstCapacity: 20
                 key-resolver: "#{@userKeyResolver}"
+  data:
+    redis:
+      database: 0
+      host: localhost
+      port: 6379
+      password: mypass
+      timeout: 60000
 
   main:
     web-application-type:
