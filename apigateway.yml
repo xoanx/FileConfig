@@ -2,23 +2,48 @@ spring:
   application:
     name:
       apigateway
+  cloud:
+    gateway:
+      routes:
+        - id: Employee2
+          uri: lb://employee2
+          predicates:
+            - Path= /employee2/search-by-employee-id/**
+            - Path= /employee2/search-by-employee-email/**
+          filters:
+            - name: RequestRateLimiter
+              arg:
+                requestedTokens: 3
+                replenishRate: 10
+                burstCapacity: 20
+                key-resolver: "#{@userKeyResolver}"
+        - id: Employee
+          uri: lb://employee
+          predicates:
+            - Path= /employee/**
+          filters:
+            - name: RequestRateLimiter
+              arg:
+                requestedTokens: 3
+                replenishRate: 10
+                burstCapacity: 20
+                key-resolver: "#{@userKeyResolver}"
+        - id: Employee
+          uri: lb://employee
+          predicates:
+            - Path= /employee/search-by-employee-email/**
+            - RemoteAddr= 127.0.0.1/24
+          filters:
+            - name: RequestRateLimiter
+              arg:
+                requestedTokens: 3
+                replenishRate: 10
+                burstCapacity: 20
+                key-resolver: "#{@userKeyResolver}"
+
   main:
     web-application-type:
       reactive
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-  data:
-    redis:
-      database: 0
-      host: localhost
-      port: 16379
-      password: mypass
-      timeout: 60000
-
 server:
   port: 8080
 
@@ -36,6 +61,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+###DockerRedis
+
 
 ###
 
