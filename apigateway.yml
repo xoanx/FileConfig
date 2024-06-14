@@ -37,9 +37,9 @@ spring:
           filters:
             - name: RequestRateLimiter
               arg:
-                redis-rate-limiter.requestedTokens: "${replenishRate}"
-                redis-rate-limiter.replenishRate: "${burstCapacity}"
-                redis-rate-limiter.burstCapacity: "${requestedTokens}"
+                redis-rate-limiter.requestedTokens: ${replenishRate}
+                redis-rate-limiter.replenishRate: ${burstCapacity}
+                redis-rate-limiter.burstCapacity: ${requestedTokens}
 
   main:
     web-application-type:
