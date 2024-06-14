@@ -16,9 +16,9 @@ spring:
           filters:
             - name: RequestRateLimiter
               arg:
-                redis-rate-limiter.requestedTokens: $(requestedTokens)
-                redis-rate-limiter.replenishRate: $(replenishRate)
-                redis-rate-limiter.burstCapacity: $(burstCapacity)
+                redis-rate-limiter.requestedTokens: ${requestedTokens}
+                redis-rate-limiter.replenishRate: ${replenishRate}
+                redis-rate-limiter.burstCapacity: ${burstCapacity}
         - id: employee
           uri: lb://employee
           predicates:
@@ -26,9 +26,9 @@ spring:
           filters:
             - name: RequestRateLimiter
               arg:
-                redis-rate-limiter.requestedTokens: $(requestedTokens)
-                redis-rate-limiter.replenishRate: $(replenishRate)
-                redis-rate-limiter.burstCapacity: $(burstCapacity)
+                redis-rate-limiter.requestedTokens: ${requestedTokens}
+                redis-rate-limiter.replenishRate: ${replenishRate}
+                redis-rate-limiter.burstCapacity: ${burstCapacity}
         - id: employee
           uri: lb://employee
           predicates:
@@ -37,9 +37,9 @@ spring:
           filters:
             - name: RequestRateLimiter
               arg:
-                redis-rate-limiter.requestedTokens: $(requestedTokens)
-                redis-rate-limiter.replenishRate: $(replenishRate)
-                redis-rate-limiter.burstCapacity: $(burstCapacity)
+                redis-rate-limiter.requestedTokens: ${requestedTokens}
+                redis-rate-limiter.replenishRate: ${replenishRate}
+                redis-rate-limiter.burstCapacity: ${burstCapacity}
 
   main:
     web-application-type:
