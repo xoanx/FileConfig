@@ -8,38 +8,38 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: Employee2
-          uri: http://localhost:8085
-          predicates:
-            - Path= /employee2/search-by-employee-id/**
-            - Path= /employee2/search-by-employee-email/**
+#        - id: Employee2
+#          uri: http://localhost:8085
+#          predicates:
+#            - Path= /employee2/search-by-employee-id/**
+#            - Path= /employee2/search-by-employee-email/**
           filters:
             - name: RequestRateLimiter
               arg:
                 redis-rate-limiter.requestedTokens: 3
                 redis-rate-limiter.replenishRate: 10
                 redis-rate-limiter.burstCapacity: 20
-        - id: Employee
-          uri: http://localhost:8081
-          predicates:
-            - Path= /employee/**
-          filters:
-            - name: RequestRateLimiter
-              arg:
-                redis-rate-limiter.requestedTokens: 3
-                redis-rate-limiter.replenishRate: 10
-                redis-rate-limiter.burstCapacity: 20
-        - id: Employee
-          uri: http://localhost:8081
-          predicates:
-            - Path= /employee/search-by-employee-email/**
-            - RemoteAddr= 127.0.0.1/24
-          filters:
-            - name: RequestRateLimiter
-              arg:
-                redis-rate-limiter.requestedTokens: 3
-                redis-rate-limiter.replenishRate: 10
-                redis-rate-limiter.burstCapacity: 20
+#        - id: Employee
+#          uri: http://localhost:8081
+#          predicates:
+#            - Path= /employee/**
+#          filters:
+#            - name: RequestRateLimiter
+#              arg:
+#                redis-rate-limiter.requestedTokens: 3
+#                redis-rate-limiter.replenishRate: 10
+#                redis-rate-limiter.burstCapacity: 20
+#        - id: Employee
+#          uri: http://localhost:8081
+#          predicates:
+#            - Path= /employee/search-by-employee-email/**
+#            - RemoteAddr= 127.0.0.1/24
+#          filters:
+#            - name: RequestRateLimiter
+#              arg:
+#                redis-rate-limiter.requestedTokens: 3
+#                redis-rate-limiter.replenishRate: 10
+#                redis-rate-limiter.burstCapacity: 20
 
   main:
     web-application-type:
