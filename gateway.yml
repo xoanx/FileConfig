@@ -23,7 +23,8 @@ spring:
           - id: employee
             uri: lb://employee
             predicates:
-              - Path= /employee/**
+              - Path= /employee/search-by-employee-id/**
+              - Path= /employee/search-by-employee-email/**
             filters:
               - name: RequestRateLimiter
                 arg:
