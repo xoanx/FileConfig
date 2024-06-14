@@ -63,9 +63,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 ###RequestLimited
-replenishRate: 10
-burstCapacity: 20
-requestedTokens: 3
+redis-rate-limiter.replenishRate: 10
+redis-rate-limiter.burstCapacity: 20
+redis-rate-limiter.requestedTokens: 3
 
 ###DockerRedis
 
