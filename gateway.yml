@@ -17,9 +17,9 @@ spring:
             filters:
               - name: RequestRateLimiter
                 arg:
-                  redis-rate-limiter.requestedTokens: 3
-                  redis-rate-limiter.replenishRate: 10
-                  redis-rate-limiter.burstCapacity: 20
+                  redis-rate-limiter.requestedTokens: ${requestedTokens}
+                  redis-rate-limiter.replenishRate: ${replenishRate}
+                  redis-rate-limiter.burstCapacity: ${burstCapacity}
           - id: employee
             uri: lb://employee
             predicates:
@@ -27,9 +27,9 @@ spring:
             filters:
               - name: RequestRateLimiter
                 arg:
-                  redis-rate-limiter.requestedTokens: 3
-                  redis-rate-limiter.replenishRate: 10
-                  redis-rate-limiter.burstCapacity: 20
+                  redis-rate-limiter.requestedTokens: ${requestedTokens}
+                  redis-rate-limiter.replenishRate: ${replenishRate}
+                  redis-rate-limiter.burstCapacity: ${burstCapacity}
           - id: employee
             uri: lb://employee
             predicates:
@@ -38,10 +38,9 @@ spring:
             filters:
               - name: RequestRateLimiter
                 arg:
-                  redis-rate-limiter.requestedTokens: 3
-                  redis-rate-limiter.replenishRate: 10
-                  redis-rate-limiter.burstCapacity: 20
-
+                  redis-rate-limiter.requestedTokens: ${requestedTokens}
+                  redis-rate-limiter.replenishRate: ${replenishRate}
+                  redis-rate-limiter.burstCapacity: ${burstCapacity}
     main:
       web-application-type:
         reactive
