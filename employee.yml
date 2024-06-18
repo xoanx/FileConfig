@@ -4,13 +4,13 @@ spring:
       employee
   datasource:
     url:
-      jdbc:mysql://localhost:3306/employee
+      jdbc:postgresql://localhost:5432/employee
     username:
       root
     password:
       a121314A
     driver-class-name:
-      com.mysql.cj.jdbc.Driver
+      org.postgresql.Driver
     h2:
       console:
         enabled:
@@ -21,7 +21,7 @@ spring:
     properties:
       hibernate:
         dialect:
-          org.hibernate.dialect.MySQL8Dialect
+          org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto:
         update
@@ -44,5 +44,4 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-
 #spring.main.allow-bean-definition-overriding=true
