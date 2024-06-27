@@ -25,6 +25,7 @@ spring:
             predicates:
               - Path= /employee/search-by-employee-id/**
               - Path= /employee/search-by-employee-email/**
+              - Path= /employee/search-employee/**
             filters:
               - name: RequestRateLimiter
                 arg:
