@@ -27,6 +27,7 @@ spring:
               - Path= /employee/search-by-employee-email/**
               - Path= /employee/search-employee/**
               - Path= /employee/search-employee-not-criteria-API/**
+              - Path= /employee/get-employee-by-id-salary/**
             filters:
               - name: RequestRateLimiter
                 arg:
